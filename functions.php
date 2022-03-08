@@ -1,6 +1,6 @@
 <?php 
 
-// To add css and js files
+// To add css and js files Testing file
 function school_script(){
 	wp_enqueue_style('main_style',get_stylesheet_uri());
 	wp_enqueue_style('bootstrap_css',get_template_directory_uri().'/css/bootstrap.min.css');
