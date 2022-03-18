@@ -7,70 +7,21 @@
                     <div class="col-lg-7">
                         <nav class="navbar sticky-top navbar-toggleable-md navbar-light nopadding"> <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <i class="fa fa-bars" style="color:#fff; font-size:17px;"></i> </button>
                             <div class="collapse navbar-collapse " id="navbarSupportedContent">
-                                <ul class="navbar-nav ml-auto">
-                                    <li class="nav-item"> <a class="nav-link mobile_nav_link main-link" href="https://technisun.com/about"> About us </a> </li>
-                                    <li class="nav-item dropdown"> <a class="nav-link mobile_nav_link main-link" href="javascript:void(0);">Services<span><i class="fa fa-angle-down mobile_arrow"></i></span></a>
-                                        <div class="dropdown-menu dropdown-megamenu">
-                                            <ul class="megamenu">
-                                                <li>
-                                                    <ul class="dropdown-submenu clearfix">
-                                                        <li class="submenu-heading">Development</li>
-                                                        <li><a href="https://technisun.com/service/php-development">PHP</a></li>
-                                                        <li><a href="https://technisun.com/service/node.js-development">Node.JS</a></li>
-                                                        <li><a href="https://technisun.com/service/asp.net-development">ASP.Net</a></li>
-                                                        <li><a href="https://technisun.com/service/laravel-development">Laravel</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li>
-                                                    <ul class="dropdown-submenu clearfix">
-                                                        <li class="submenu-heading">Designing</li>
-                                                        <li><a href="https://technisun.com/service/ui-ux-designing">UI &amp; UX</a></li>
-                                                        <li><a href="https://technisun.com/service/website-designing">Website</a></li>
-                                                        <li><a href="https://technisun.com/service/responsive-designing">Responsive</a></li>
-                                                        <li><a href="https://technisun.com/service/parallax-designing">Parallax</a></li>
-                                                        <li><a href="https://technisun.com/service/graphic-designing">Graphic</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li>
-                                                    <ul class="dropdown-submenu clearfix">
-                                                        <li class="submenu-heading">Digital Marketing</li>
-                                                        <li><a href="https://technisun.com/service/seo">SEO</a></li>
-                                                        <li><a href="https://technisun.com/service/smo-smm">SMO/SMM</a></li>
-                                                        <li><a href="https://technisun.com/service/pay-per-click">Pay Per Click</a></li>
-                                                        <li><a href="https://technisun.com/service/reputation-management">Reputation Management</a></li>
-                                                        <li><a href="https://technisun.com/service/email-marketing">E-mail Marketing</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li>
-                                                    <ul class="dropdown-submenu clearfix">
-                                                        <li class="submenu-heading">Mobile Applications</li>
-                                                        <li><a href="https://technisun.com/service/android-app-development">Android App</a></li>
-                                                        <li><a href="https://technisun.com/service/ios-app-development">iOS App</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li>
-                                                    <ul class="dropdown-submenu clearfix">
-                                                        <li class="submenu-heading">CMS Development</li>
-                                                        <li><a href="https://technisun.com/service/wordpress-development">WordPress</a></li>
-                                                        <li><a href="https://technisun.com/service/joomla-development">Joomla</a></li>
-                                                        <li><a href="https://technisun.com/service/drupal-development">Drupal</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li>
-                                                    <ul class="dropdown-submenu clearfix">
-                                                        <li class="submenu-heading">eCommerce</li>
-                                                        <li><a href="https://technisun.com/service/magento-development">Magento</a></li>
-                                                        <li><a href="https://technisun.com/service/woocommerce-development">WooCommerce</a></li>
-                                                        <li><a href="https://technisun.com/service/nopcommerce-development">nopCommerce</a></li>
-                                                        <li><a href="https://technisun.com/service/opencart-development">OpenCart</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li class="nav-item"> <a class="nav-link mobile_nav_link main-link" href="https://technisun.com/portfolio"> Portfolio </a> </li>
-                                    <li class="nav-item"> <a class="nav-link main-link" href="https://technisun.com/contact-us"> Contact Us</a> </li>
-                                </ul>
+                                
+                                            <?php 
+                                            // wp custom menu 
+                                            include('subMenu.php');
+                                            wp_nav_menu(array(
+                                                'menu'=>'primary_menu',
+                                                'container'=>'',
+                                                'items_wrap'=>'<ul class="navbar-nav ml-auto">%3$s</ul>',
+                                                'add_li_class'  => 'nav-item dropdown',
+                                                'walker' => new subMenu
+                                            ));
+
+
+                                            ?>
+                                   
                             </div>
                         </nav>
                     </div>
